@@ -1,8 +1,6 @@
 # Overview
 This repository contains all the code needed to complete the final project for the Localization course in Udacity's Self-Driving Car Nanodegree.
 
-#### Submission
-All you will need to submit is your `src` directory. You should probably do a `git pull` before submitting to verify that your project passes the most up-to-date version of the grading code (there are some parameters in `src/main.cpp` which govern the requirements on accuracy and run time).
 
 ## Project Introduction
 Your robot has been kidnapped and transported to a new location! Luckily it has a map of this location, a (noisy) GPS estimate of its initial location, and lots of (noisy) sensor and control data.
@@ -129,15 +127,10 @@ You can find the inputs to the particle filter in the `data` directory.
 
 > * Map data provided by 3D Mapping Solutions GmbH.
 
-## Success Criteria
-If your particle filter passes the current grading code in the simulator (you can make sure you have the current version at any time by doing a `git pull`), then you should pass!
+## Results
+The results of the particle filter localizing the simulated vehicle can be seen in the following video:
+- https://youtu.be/MD1S4mWXdFI
 
-The things the grading code is looking for are:
+The code was able to maintain a low error and accuractely localize the vehicle throughout the entire run through the dataset. The location is a little jittery throughout the video but the predicted location always remains accurate. The jitter could possibly be reduced by tuning the filter further. I tried to use different numbers of particles but I did not notice any noticeable reduction in jitter during different runs. 
 
-
-1. **Accuracy**: your particle filter should localize vehicle position and yaw to within the values specified in the parameters `max_translation_error` and `max_yaw_error` in `src/main.cpp`.
-
-2. **Performance**: your particle filter should complete execution within the time of 100 seconds.
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+While the code doesn't seem to have any optimization issues at the moment the use of nearest neighbor could cause issues in a larger and more complex environment. The replacement of this algorithm with a more efficient one could potentially be a major area of improvement in the future.

@@ -36,7 +36,7 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
    * NOTE: Consult particle_filter.h for more information about this method 
    *   (and others in this file).
    */
-  num_particles = 100;  // TODO: Set the number of particles
+  num_particles = 500;  // TODO: Set the number of particles
 
   // Create Gaussian distribution for each of the measurement variables
   normal_distribution<double> dist_x(x, std[0]);
@@ -49,7 +49,7 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
     // Create a new particle
     Particle new_part;
 
-    // Set ID to particle number?
+    // Set ID to particle number
     new_part.id = i;
 
     // Draw from the corresponding Gaussian distributions for it's state variables
