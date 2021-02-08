@@ -95,7 +95,7 @@ void ParticleFilter::prediction(double delta_t, double std_pos[],
     // Calculate the final positions of the particles after motion is applied
     double x_f, y_f, theta_f;
     // Check to make sure yaw rate isn't near 0 to avoid a divide by 0 error which was occasionally happening
-    if(abs(yaw_rate) < .00005)
+    if(fabs(yaw_rate) < .00005)
     {
       // If it is then use the equations for straight line driving
       x_f = x_0 + velocity * delta_t * cos(theta_0);
